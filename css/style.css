@@ -1,0 +1,100 @@
+:root{--bg:#000;--card:#F3F3F3;--cardink:#111;--ink:#fff;--muted:#D6D6D6;--o:#FF6A00;--o2:#FF9A57;--o3:#FFE9DB;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:84px;height:auto}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 clamp(14px,.4vw + 13px,16px)/1.7 "Poppins",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,p{margin:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--o2);outline-offset:3px}
+.w{max-width:1600px;margin:0 auto;padding:0 clamp(14px,4vw,72px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 22px;background:var(--o);color:#fff;border:0;border-radius:3px;font:600 14px "Poppins",sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:#ff8126;transform:translateY(-2px)}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.logo{font:700 clamp(22px,3vw,30px)/1 "Poppins",sans-serif;display:flex;align-items:center}
+.logo b{background:var(--o);padding:2px 6px;margin-right:2px;font-weight:700}
+nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);font-size:14px;font-weight:500}
+nav a:not(.btn):hover{color:var(--o2)}
+.burger{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:#fff;margin:5px auto;transition:.25s}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(48px,7vw,88px)}
+.hi{font-weight:600;font-size:14px}
+.name{color:var(--o);font-weight:600;font-size:clamp(18px,2.4vw,22px)}
+h1{font-size:clamp(40px,7.4vw,76px);font-weight:700;line-height:1.08;margin:2px 0 18px}
+h1 span{display:block;text-align:right}
+.hero p.l{max-width:46ch;margin-bottom:26px;text-align:justify}
+.art{position:relative;aspect-ratio:1;width:min(100%,400px);margin-inline:auto}
+.art i{position:absolute;border-radius:50%}
+.art .a{inset:14% 6% 4% 8%;background:var(--o2);border-radius:46% 54% 50% 50%/55% 45% 55% 45%}
+.art .b{width:34%;aspect-ratio:1;right:0;bottom:8%;background:var(--o3)}
+.art .c{width:20%;aspect-ratio:1;left:4%;top:12%;background:var(--o)}
+.art .m{position:absolute;inset:0;display:grid;place-items:center;font:700 clamp(72px,14vw,132px)/1 "Poppins",sans-serif;color:#000;letter-spacing:-.04em}
+.soc{display:flex;justify-content:center;gap:18px;margin-top:20px}
+.soc a{width:36px;height:36px;display:grid;place-items:center}
+.soc svg,.fsoc svg{width:24px;height:24px;fill:#fff}
+.soc a:hover svg,.fsoc a:hover svg{fill:var(--o2)}
+/* sections */
+section{padding:clamp(40px,6vw,76px) 0}
+.t{font-size:clamp(30px,4.6vw,44px);font-weight:600;text-align:center;line-height:1.2}
+.sub{text-align:center;max-width:60ch;margin:12px auto 0}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:center}
+.about h2{font-size:clamp(30px,4.6vw,44px);font-weight:600;margin-bottom:12px;text-align:left}
+.sk{margin-top:16px}
+.sk b{display:block;font-weight:600;margin-bottom:6px}
+.trk{height:6px;background:#fff;border-radius:6px;position:relative}
+.fil{height:100%;width:0;background:var(--o);border-radius:6px;transition:width 1.2s ease;position:relative}
+.fil::after{content:"";position:absolute;right:-9px;top:50%;width:18px;height:18px;margin-top:-9px;background:#fff;border:3px solid var(--o);border-radius:50%}
+.in .fil{width:var(--v)}
+.srv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px}
+.card{background:var(--card);color:var(--cardink);border-radius:6px;padding:22px 20px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(255,106,0,.25)}
+.card svg{width:44px;height:44px;stroke:var(--o);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.card h3{font-size:20px;font-weight:600;margin-bottom:6px}
+.card p{font-size:14px;color:#333}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:28px 0 34px}
+.tabs button{min-height:40px;padding:4px 14px;border:0;border-radius:3px;background:var(--card);color:#111;font:500 15px "Poppins",sans-serif;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--o);color:#fff}
+.prj{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.prj article[hidden]{display:none}
+.shot{aspect-ratio:4/3;background:#EEF1F6;border-radius:4px;padding:14px;display:grid;gap:10px;align-content:start;overflow:hidden}
+.shot .h{height:22%;background:#1b2437;border-radius:3px}
+.shot .r{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.shot .r s{display:block;height:34px;background:#fff;border:1px solid #d6dbe6}
+.shot .ln{height:7px;background:#cfd6e4;width:70%}
+.shot .o{height:20px;width:30%;background:var(--o)}
+.prj small{display:block;color:var(--o);margin-top:12px;font-size:13px}
+.prj h3{font-size:18px;font-weight:600}
+.prj p{color:var(--muted);font-size:14px}
+.exp{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:40px}
+.exp .card small{color:var(--o);font-weight:600;font-size:13px}
+.exp .card h3{font-size:18px;margin:2px 0 2px}
+.exp .card em{font-style:normal;font-size:13px;color:#555;display:block;margin-bottom:8px}
+.edu{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:34px;text-align:center;font-size:14px;color:var(--muted)}
+.edu b{color:#fff;font-weight:600}
+form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+input{flex:1 1 280px;max-width:420px;min-height:48px;padding:10px 16px;border:0;border-radius:3px;background:var(--card);font:400 15px "Poppins",sans-serif}
+form .btn{min-height:48px}
+.ci{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 28px;margin-top:26px;color:var(--muted);font-size:14px;overflow-wrap:anywhere;text-align:center}
+footer{text-align:center;padding:48px 0 0}
+.fn{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;margin:26px 0;font-size:14px}
+.fn a{min-height:36px;display:inline-flex;align-items:center}.fn a:hover{color:var(--o2)}
+.fsoc{display:flex;justify-content:center;gap:18px;margin-bottom:34px}
+.fsoc a{width:36px;height:36px;display:grid;place-items:center}
+.cp{background:#0b0b0b;padding:16px;font-size:13px;border-top:1px solid #1d1d1d}
+.cp b{color:var(--o);font-weight:600}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:860px){
+.burger{display:block}
+nav{position:fixed;left:0;right:0;top:calc(76px + env(safe-area-inset-top,0px));flex-direction:column;align-items:stretch;gap:0;background:#000;padding:8px clamp(14px,4vw,28px) 20px;border-bottom:1px solid #222;transform:translateY(-130%);visibility:hidden;transition:transform .3s,visibility .3s}
+nav.open{transform:none;visibility:visible}
+nav a{padding:12px 0;border-bottom:1px solid #1b1b1b}nav .btn{margin-top:14px;border:0}
+.hero,.about{grid-template-columns:1fr}
+.art{order:-1;width:min(100%,300px)}
+.hero{text-align:left}.about .art{width:min(100%,280px)}
+.about h2{text-align:center}
+}
+@media (max-width:480px){.btn.hire{width:100%}h1 span{text-align:left}.hero p.l{text-align:left}}
